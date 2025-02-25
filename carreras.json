@@ -1,0 +1,58 @@
+[
+    {
+        "nombre": "Ingeniería Electrónica",
+        "descripcion": "(Diseño y desarrollo de sistemas electrónicos y telecomunicaciones.)",
+        "areas_interes": ["tecnología", "electrónica", "automatización"],
+        "habilidades": ["programación de circuitos", "diseño de hardware", "resolución de problemas técnicos"],
+        "conocimientos": ["microcontroladores", "sistemas embebidos", "redes de comunicación"]
+    },
+    {
+        "nombre": "Ingeniería Civil",
+        "descripcion": "(Diseño y construcción de infraestructuras y edificaciones.)",
+        "areas_interes": ["construcción", "diseño estructural", "gestión de proyectos"],
+        "habilidades": ["cálculo estructural", "manejo de materiales", "planificación de obra"],
+        "conocimientos": ["mecánica de suelos", "concreto estructural", "normativas de construcción"]
+    },
+    {
+        "nombre": "Ingeniería en Sistemas Computacionales",
+        "descripcion": "(Desarrollo de software y administración de sistemas informáticos.)",
+        "areas_interes": ["tecnología", "programación", "ciberseguridad"],
+        "habilidades": ["desarrollo web", "seguridad informática", "administración de redes"],
+        "conocimientos": ["lenguajes de programación", "bases de datos", "inteligencia artificial"]
+    },
+    {
+        "nombre": "Ingeniería Industrial",
+        "descripcion": "(Optimización de procesos productivos y de gestión en industrias.)",
+        "areas_interes": ["eficiencia", "procesos", "gestión empresarial"],
+        "habilidades": ["análisis de procesos", "gestión de calidad", "optimización de recursos"],
+        "conocimientos": ["manufactura", "logística", "gestión de operaciones"]
+    },
+    {
+        "nombre": "Ingeniería en Gestión Empresarial",
+        "descripcion": "(Administración y optimización de recursos en entornos empresariales.)",
+        "areas_interes": ["negocios", "gestión", "liderazgo"],
+        "habilidades": ["planificación estratégica", "análisis financiero", "gestión de talento humano"],
+        "conocimientos": ["mercadotecnia", "economía", "finanzas"]
+    },
+    {
+        "nombre": "Ingeniería Electromecánica",
+        "descripcion": "(Integración de sistemas mecánicos y eléctricos para la automatización industrial.)",
+        "areas_interes": ["energía", "mecánica", "automatización"],
+        "habilidades": ["diseño de sistemas mecánicos", "control de motores", "resolución de problemas técnicos"],
+        "conocimientos": ["mecánica de fluidos", "termodinámica", "sistemas eléctricos"]
+    },
+    {
+        "nombre": "Arquitectura",
+        "descripcion": "(Diseño y planificación de espacios habitables y funcionales.)",
+        "areas_interes": ["diseño", "construcción", "urbanismo"],
+        "habilidades": ["creatividad", "dibujo técnico", "resolución de problemas"],
+        "conocimientos": ["materiales de construcción", "estructuras", "software de diseño"]
+    },
+    {
+        "nombre": "Gastronomía",
+        "descripcion": "(Arte culinario y administración de establecimientos gastronómicos.)",
+        "areas_interes": ["cocina", "hospitalidad", "creatividad"],
+        "habilidades": ["manejo de ingredientes", "presentación de platillos", "gestión de restaurantes"],
+        "conocimientos": ["técnicas de cocina", "seguridad alimentaria", "costos de producción"]
+    }
+]

@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #32129A;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Alinea el logo y el título en el centro verticalmente */
+    justify-content: center; /* Centra los elementos en la página */
+}
+
+.logo {
+    max-width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    margin-right: 15px; /* Agrega un espacio entre el logo y el título */
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+main {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #aaa;
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+ 
+}
+
+
+button {
+    background-color: #32129A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+}
+
+button:hover {
+    background-color: #210774;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+    
+
+
+#resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    text-align: center;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+#resultado h2 {
+    color: #4A148C;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#resultado p {
+    font-size: 18px;
+    color: #333;
+    background: #F3F3F3;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#resultado strong {
+    color: #D32F2F;
+}
+
+#resultado p:hover {
+    background: #E0E0E0;
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.form-group:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    
+}
+
+
+label i {
+    margin-right: 10px;
+    color: #004080;
+    font-size: 22px;
+}
+
+
+input {
+    width: 65%; /* Ocupa el espacio restante */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #004080;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+select {
+    width: 55%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+select:focus {
+    border-color: #004080;
+    box-shadow: 0px 4px 10px rgba(0, 64, 128, 0.3);
+}

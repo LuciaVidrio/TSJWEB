@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Recomendador de Carreras</title>
+    <script>
+        async function enviarRespuestas() {
+            console.log("Enviando respuestas...");
+    
+            let respuestas = {
+                interes: document.getElementById('interes').value,
+                habilidades: document.getElementById('habilidades').value,
+                conocimientos: document.getElementById('conocimientos').value
+            };
+    
+            console.log("Respuestas:", respuestas);
+    
+            if (!respuestas.interes || !respuestas.habilidades || !respuestas.conocimientos) {
+                document.getElementById('resultado').innerHTML = `
+                    <p class="error-msg">Por favor, selecciona todas las opciones.</p>`;
+                return;
+            }
+    
+            try {
+                let response = await fetch('/recomendar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(respuestas)
+                });
+    
+                if (!response.ok) throw new Error(`Error en la solicitud: ${response.status}`);
+    
+                let data = await response.json();
+                console.log("Respuesta recibida:", data);
+    
+                let resultadoDiv = document.getElementById('resultado');
+    
+                if (data.length > 0) {
+                    resultadoDiv.innerHTML = `
+                        <h2>Resultados de tu recomendación</h2>
+                        ${data.map(r => `
+                            <div class="resultado-card">
+                                <h3>${r.carrera}</h3>
+                                <p><strong> </strong> ${r.razon}</p>
+                                <p><strong>Descripción de Carrera:</strong> ${r.descripcion}</p>
+                            </div>
+                        `).join('')}
+                    `;
+                } else {
+                    resultadoDiv.innerHTML = `
+                        <p class="error-msg">No se encontraron coincidencias. Prueba con otras opciones.</p>`;
+                }
+    
+            } catch (error) {
+                console.error(" Error:", error);
+                document.getElementById('resultado').innerHTML = `
+                    <p class="error-msg"> Ocurrió un error. Intenta de nuevo.</p>`;
+            }
+        }
+    </script>
+</head>
+<header>
+    <img src="{{ url_for('static', filename='logo.svg') }}" alt="Logo" class="logo">
+    <h1>Recomendación de Carreras</h1>
+</header>
+<body>
+    <form onsubmit="event.preventDefault(); enviarRespuestas();">
+        <div class="form-group">
+            <label for="interes"><i class="fa-solid fa-magnifying-glass"></i> Intereses:</label>
+            <select id="interes">
+                <option value="" disabled selected>Selecciona un interés</option>
+                <option value="tecnología">Tecnología</option>
+                <option value="electrónica">Electrónica</option>
+                <option value="automatización">Automatización</option>
+                <option value="negocios">Negocios</option>
+                <option value="gestión">Gestión Empresarial</option>
+                <option value="construcción">Construcción</option>
+                <option value="cocina">Cocina</option>
+                <option value="hospitalidad">Hospitalidad</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="habilidades"><i class="fa-solid fa-tools"></i> Habilidades:</label>
+            <select id="habilidades">
+                <option value="" disabled selected>Selecciona una habilidad</option>
+            
+                <option value="programación de circuitos">Programación de Circuitos</option>
+                <option value="diseño de hardware">Diseño de Hardware</option>
+                <option value="resolución de problemas técnicos">Resolución de Problemas Técnicos</option>
+            
+                <option value="cálculo estructural">Cálculo Estructural</option>
+                <option value="manejo de materiales">Manejo de Materiales</option>
+                <option value="planificación de obra">Planificación de Obra</option>
+            
+                <option value="desarrollo web">Desarrollo Web</option>
+                <option value="seguridad informática">Seguridad Informática</option>
+                <option value="administración de redes">Administración de Redes</option>
+            
+                <option value="análisis de procesos">Análisis de Procesos</option>
+                <option value="gestión de calidad">Gestión de Calidad</option>
+                <option value="optimización de recursos">Optimización de Recursos</option>
+            
+                <option value="planificación estratégica">Planificación Estratégica</option>
+                <option value="análisis financiero">Análisis Financiero</option>
+                <option value="gestión de talento humano">Gestión de Talento Humano</option>
+        
+                <option value="diseño de sistemas mecánicos">Diseño de Sistemas Mecánicos</option>
+                <option value="control de motores">Control de Motores</option>
+                <option value="resolución de problemas técnicos">Resolución de Problemas Técnicos</option>
+            
+                <option value="creatividad">Creatividad</option>
+                <option value="dibujo técnico">Dibujo Técnico</option>
+                <option value="resolución de problemas">Resolución de Problemas</option>
+            
+                <option value="manejo de ingredientes">Manejo de Ingredientes</option>
+                <option value="presentación de platillos">Presentación de Platillos</option>
+                <option value="gestión de restaurantes">Gestión de Restaurantes</option>
+            
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="conocimientos"><i class="fa-solid fa-book-open"></i> Conocimientos:</label>
+            <select id="conocimientos">
+                <option value="" disabled selected>Selecciona un conocimiento</option>
+            
+                <option value="microcontroladores">Microcontroladores</option>
+                <option value="sistemas embebidos">Sistemas Embebidos</option>
+                <option value="redes de comunicación">Redes de Comunicación</option>
+            
+                <option value="mecánica de suelos">Mecánica de Suelos</option>
+                <option value="concreto estructural">Concreto Estructural</option>
+                <option value="normativas de construcción">Normativas de Construcción</option>
+            
+                <option value="lenguajes de programación">Lenguajes de Programación</option>
+                <option value="bases de datos">Bases de Datos</option>
+                <option value="inteligencia artificial">Inteligencia Artificial</option>
+            
+                <option value="manufactura">Manufactura</option>
+                <option value="logística">Logística</option>
+                <option value="gestión de operaciones">Gestión de Operaciones</option>
+            
+                <option value="mercadotecnia">Mercadotecnia</option>
+                <option value="economía">Economía</option>
+                <option value="finanzas">Finanzas</option>
+            
+                <option value="mecánica de fluidos">Mecánica de Fluidos</option>
+                <option value="termodinámica">Termodinámica</option>
+                <option value="sistemas eléctricos">Sistemas Eléctricos</option>
+            
+                <option value="materiales de construcción">Materiales de Construcción</option>
+                <option value="estructuras">Estructuras</option>
+                <option value="software de diseño">Software de Diseño</option>
+            
+                <option value="técnicas de cocina">Técnicas de Cocina</option>
+                <option value="seguridad alimentaria">Seguridad Alimentaria</option>
+                <option value="costos de producción">Costos de Producción</option>
+            
+            </select>
+        </div>
+    
+        <button type="button" onclick="enviarRespuestas()">
+            <i class="fa-solid fa-magnifying-glass"></i> Obtener Recomendación
+        </button>
+    </form>
+   
+    <div id="resultado"></div>
+</body>
+</html>
